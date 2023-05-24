@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Kazik</string>
+    <string name="defolt" translatable="false">0</string>
+    <string name="button_start">Запустить казик</string>
+    <string name="price">Стоимость одного вращения: 100</string>
+    <string name="balance">Баланс:</string>
+    <string name="your_balance">Ваш баланс:</string>
+    <string name="reset_data">Сбросить данные</string>
+    <string name="about">О программе</string>
+    <string name="back">Назад</string>
+</resources>

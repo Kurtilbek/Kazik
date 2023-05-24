@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kazik</string>
+    <string name="button_start">Start casino</string>
+    <string name="price">One spin cost: 100</string>
+    <string name="balance">"Balance: "</string>
+    <string name="your_balance">"Your balance: "</string>
+    <string name="reset_data">Reset data</string>
+    <string name="about">About</string>
+    <string name="back">Back</string>
+</resources>

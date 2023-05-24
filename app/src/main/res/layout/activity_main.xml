@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/backgroud">
+
+
+  <TextView
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:layout_below="@+id/adfhb"
+      android:layout_alignParentEnd="true"
+      android:layout_marginTop="-89dp"
+      android:layout_marginEnd="5dp"
+      android:text="НЕ ГОТОВО"
+      android:textSize="30dp"
+      android:textColor="@color/text_color"/>
+
+  <Button
+      android:layout_width="151dp"
+      android:layout_height="63dp"
+      android:layout_alignParentStart="true"
+      android:layout_alignParentBottom="true"
+      android:layout_marginStart="10dp"
+      android:layout_marginBottom="10dp"
+      android:onClick="toDeletAll"
+      android:text="@string/reset_data" />
+
+  <Button
+      android:layout_width="151dp"
+      android:layout_height="63dp"
+      android:layout_alignParentRight="true"
+      android:layout_alignParentBottom="true"
+      android:layout_marginRight="10dp"
+      android:layout_marginBottom="10dp"
+      android:onClick="toAbout"
+      android:text="@string/about" />
+
+  <Button
+      android:id="@+id/adfhb"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentStart="true"
+      android:layout_alignParentTop="true"
+      android:layout_alignParentEnd="true"
+      android:layout_marginStart="207dp"
+      android:layout_marginLeft="100dp"
+      android:layout_marginTop="350dp"
+      android:layout_marginEnd="10dp"
+      android:onClick="goToKamikadze"
+      android:text="Перейти к рулетке" />
+
+  <TextView
+      android:id="@+id/Text_4"
+      android:layout_width="100dp"
+      android:layout_height="56dp"
+      android:layout_alignParentTop="true"
+      android:layout_alignParentEnd="true"
+      android:layout_marginTop="13dp"
+      android:layout_marginEnd="15dp"
+      android:gravity="center"
+      android:text="10000"
+      android:textColor="@color/text_color"
+      android:textSize="25sp" />
+
+  <TextView
+      android:id="@+id/Balance"
+      android:layout_width="150dp"
+      android:layout_height="56dp"
+      android:layout_alignParentTop="true"
+      android:layout_marginTop="13dp"
+      android:layout_marginEnd="0dp"
+      android:layout_toStartOf="@+id/Text_4"
+      android:gravity="center"
+      android:text="@string/your_balance"
+      android:textColor="@color/text_color"
+      android:textSize="25sp" />
+
+  <ImageView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentStart="true"
+      android:layout_alignParentTop="true"
+      android:layout_marginStart="60dp"
+      android:layout_marginTop="100dp"
+      android:onClick="goToRulet"
+      android:scaleType="fitXY"
+      android:src="@mipmap/ic_torulet_foreground"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:ignore="SpeakableTextPresentCheck" />
+
+
+</RelativeLayout>
