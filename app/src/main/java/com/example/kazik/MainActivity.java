@@ -4,17 +4,11 @@ package com.example.kazik;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.Preference;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.TextView;
-
-import java.util.prefs.Preferences;
 
 public class MainActivity extends AppCompatActivity {
     public int m = 10000;//стартовый капитал
@@ -107,12 +101,12 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(MONEY, m);
         startActivityForResult(intent, REQUEST_CODE);
         onPause();
-
+        finish();
     }
     public void goToKamikadze(View view){
         startActivity(new Intent(this, KamikadzeActivity.class));
         onPause();
-
+        finish();
     }
 
 
@@ -127,7 +121,8 @@ public class MainActivity extends AppCompatActivity {
         balanceNumber.setText(String.valueOf(m));
     }
 
-    public void toAbout(View view) {
+    public void goToAbout(View view) {
         startActivity(new Intent(this, AboutActivity.class));
+        finish();
     }
 }

@@ -16,5 +16,6 @@ public class AboutActivity extends AppCompatActivity {
 
     public void goToBack(View view) {
         startActivity(new Intent(this, MainActivity.class));
+        finish();
     }
 }
