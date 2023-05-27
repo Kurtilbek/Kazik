@@ -18,18 +18,19 @@ import android.widget.Toast;
 import java.util.Random;
 
 public class RuletActivity extends AppCompatActivity {
-    TextView firstNumber, secondNumber, thirdNumber, balanceNumber, button;
+    TextView firstNumber, secondNumber, thirdNumber, balanceNumber, button, test;
     int j = 0,
     rng = 10,
     N = 10,
     spd = 0,
     cst = 100,
     prz = 10000;
+    //prz = 1;
     int mm;
-
     SharedPreferences rPref;
 
     Random r = new Random();
+    //int randomNumber = r.nextInt(14001) + 1000;
 
     int a, b, c;
 
@@ -46,7 +47,7 @@ public class RuletActivity extends AppCompatActivity {
         secondNumber = findViewById(R.id.Text_2);
         thirdNumber = findViewById(R.id.Text_3);
         balanceNumber = findViewById(R.id.Text_4);
-
+        test = findViewById(R.id.test);
 
         // Получаем SharedPreferences, созданные в MainActivity
         rPref = getSharedPreferences("moneyData", MODE_PRIVATE);
@@ -64,10 +65,14 @@ public class RuletActivity extends AppCompatActivity {
         if ((j >= N && a == b && a == c) && a == 7 && b == 7 && c == 7) // если 777
         {
             mm += prz * 7;
+//            mm += prz * r.nextInt(randomNumber);
+//            test.setText(String.valueOf(randomNumber));
         }
         if ((j >= N && a == b && a == c) && (a != 7 && b != 7 && c != 7)) // если 111, 222, и тд
         {
             mm += prz;
+//            mm += prz * randomNumber;
+//            test.setText(String.valueOf(randomNumber));
         }
 
         mm -= cst;
