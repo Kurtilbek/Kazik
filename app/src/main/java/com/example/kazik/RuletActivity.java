@@ -34,8 +34,6 @@ public class RuletActivity extends AppCompatActivity {
 
     int a, b, c;
 
-
-
     @SuppressLint("CutPasteId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,11 +85,10 @@ public class RuletActivity extends AppCompatActivity {
 
             balanceNumber.setText(String.valueOf(mm)); // обновляем баланс после первого выпадения числа
 
-
             if(mm<=99){
                 button.setBackgroundResource(R.drawable.style_offnik);
                 button.setClickable(false);
-                Toast.makeText(this,"А че с деньгами?", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,getString(R.string.WhatMoney), Toast.LENGTH_SHORT).show();
             }
             SharedPreferences.Editor editor = rPref.edit();
             editor.putInt(MainActivity.MONEY, mm);

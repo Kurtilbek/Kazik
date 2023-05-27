@@ -12,12 +12,9 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     public int m = 10000;//стартовый капитал
-
     TextView balanceNumber;
     public static SharedPreferences pref;
     public final static String MONEY = "mon";
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,8 +27,6 @@ public class MainActivity extends AppCompatActivity {
 
         balanceNumber = findViewById(R.id.Text_4);
         balanceNumber.setText(String.valueOf(m));
-
-
     }
 
     @Override
@@ -45,14 +40,12 @@ public class MainActivity extends AppCompatActivity {
         // Обновляем значение переменной m и отображаем его на экране
         balanceNumber.setText(String.valueOf(m));
     }
+
     public void goToRulet(View view){
         Intent intent = new Intent(this, RuletActivity.class);
         intent.putExtra(MONEY, m);
         startActivity(intent);
     }
-
-
-
 
     public void toDeletAll(View view) {
         SharedPreferences.Editor editor = pref.edit();
@@ -67,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
     public void goToAbout(View view) {
         startActivity(new Intent(this, AboutActivity.class));
     }
-
 
     public void goToKamikadze(View view) {
         Intent intent = new Intent(this, KamikadzeActivity.class);

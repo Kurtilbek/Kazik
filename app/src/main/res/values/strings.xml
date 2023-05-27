@@ -8,5 +8,8 @@
     <string name="reset_data">Сбросить
 данные</string>
     <string name="about">О программе</string>
+    <string name="WhatMoney">А че с деньгами?</string>
     <string name="back">Назад</string>
+    <string name="Generate">Сгенерировать</string>
+    <string name="_1000_n_1500_n_4">ЦЕНА НАЖАТИЯ: 1000\nВЫЙГРЫШ: 1500\nКОЛИЧЕСТВО ПРАВИЛЬНЫХ КНОПОК: 4</string>
 </resources>

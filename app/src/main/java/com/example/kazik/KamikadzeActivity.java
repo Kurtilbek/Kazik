@@ -16,12 +16,10 @@ import java.util.Random;
 
 public class KamikadzeActivity extends AppCompatActivity {
     TextView balanceNumber;
-    GridView gvMain;
     TextView b1, b2, b3, b4, b5, b6, b7, b8, b9, gen;
     int[] selectedNumbers = new int[3];
     public int c;
     int mm;
-
     Random random = new Random();
     SharedPreferences rPref;
     @Override
@@ -137,7 +135,6 @@ public class KamikadzeActivity extends AppCompatActivity {
                 mm += 1500;
                 balanceNumber.setText(String.valueOf(mm));
                 foundMatch = true; //Если правильно, останавливать цикл с помощью break
-
                 break;
             }
         }
@@ -149,7 +146,7 @@ public class KamikadzeActivity extends AppCompatActivity {
             toLock();
             gen.setClickable(false);
             gen.setBackgroundResource(R.drawable.style_offnik);
-            Toast.makeText(this,"А че с деньгами?", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,getString(R.string.WhatMoney), Toast.LENGTH_SHORT).show();
         }
 
         balanceNumber.setText(String.valueOf(mm));

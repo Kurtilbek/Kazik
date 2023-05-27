@@ -8,4 +8,7 @@
     <string name="reset_data">Reset data</string>
     <string name="about">About</string>
     <string name="back">Back</string>
+    <string name="Generate">Generate</string>
+    <string name="_1000_n_1500_n_4">PRESS PRICE: 1500 GAIN: 1500 NUMBER OF CORRECT BUTTONS: 4</string>
+    <string name="WhatMoney">What about the money?</string>
 </resources>

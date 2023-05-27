@@ -26,14 +26,14 @@
         app:layout_constraintEnd_toStartOf="@+id/Text_4"
         app:layout_constraintTop_toTopOf="parent"
         android:gravity="end"
-        android:text="Баланс:"
+        android:text="@string/balance"
         android:textColor="@color/text_color"
         android:textSize="25sp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ЦЕНА НАЖАТИЯ: 1000\nВЫЙГРЫШ: 1500\nКОЛИЧЕСТВО ПРАВИЛЬНЫХ КНОПОК: 4"
+        android:text="@string/_1000_n_1500_n_4"
         android:drawableStart="@drawable/baseline_info_24"
         android:drawablePadding="8dp"
         android:textColor="@color/text_color"
@@ -211,7 +211,7 @@
         android:background="@drawable/style_cigan"
         android:gravity="center"
         android:onClick="Vichislenia"
-        android:text="Сгенерировать"
+        android:text="@string/Generate"
         android:textColor="#5A5A5A"
         android:textSize="30dp"
         android:textStyle="bold"
