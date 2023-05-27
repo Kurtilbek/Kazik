@@ -178,4 +178,8 @@ public class KamikadzeActivity extends AppCompatActivity {
         b8.setClickable(true);b8.setBackgroundResource(R.drawable.style_cigan);
         b9.setClickable(true);b9.setBackgroundResource(R.drawable.style_cigan);
     }
+    public void goToMain(View view){
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
+    }
 }

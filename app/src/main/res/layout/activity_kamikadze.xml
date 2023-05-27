@@ -43,7 +43,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/con1"/>
 
-
+    <TextView
+        android:id="@+id/back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:onClick="goToMain"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+        android:background="@drawable/style_cigan"
+        android:foreground="@drawable/baseline_arrow_back_24"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:gravity="center"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/con1"

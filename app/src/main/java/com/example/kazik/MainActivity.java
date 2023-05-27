@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, RuletActivity.class);
         intent.putExtra(MONEY, m);
         startActivity(intent);
+        finish();
     }
 
     public void toDeletAll(View view) {
@@ -59,10 +60,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void goToAbout(View view) {
         startActivity(new Intent(this, AboutActivity.class));
+        finish();
     }
 
     public void goToKamikadze(View view) {
         Intent intent = new Intent(this, KamikadzeActivity.class);
         startActivity(intent);
+        finish();
     }
 }
