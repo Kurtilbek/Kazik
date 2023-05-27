@@ -10,5 +10,21 @@
     <color name="backgroud">#505050</color>
     <color name="text_color">#E8E8E8</color>
     <color name="text_red">#ED2222</color>
+    <color name="blue1">#0097c6</color>
+    <color name="gray_updown">#252422</color>
+    <color name="gray_back">#312d2b</color>
+    <color name="gray_stroke">#464241</color>
+    <color name="gray_text">#7d7c7a</color>
+    <color name="white_chess">#eeeed2</color>
+    <color name="green_main">#86a94b</color>
+    <color name="green_add">#779557</color>
+    <color name="green_add2">#5f7746</color>
+    <color name="green_chess">#769655</color>
+
+    <color name="orange1">#f8a579</color>
+    <color name="orange2">#fb8a4c</color>
+    <color name="orange3">#ee5a2b</color>
+    <color name="gray1">#c2bebc</color>
+    <color name="gray2">#b4b0ae</color>
 
 </resources>

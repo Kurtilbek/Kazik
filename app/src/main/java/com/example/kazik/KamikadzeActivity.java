@@ -1,125 +1,184 @@
 package com.example.kazik;
 
-
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Arrays;
 import java.util.Random;
-public class KamikadzeActivity extends AppCompatActivity implements View.OnClickListener {
 
-    TextView money;
-    MainActivity RA = new MainActivity();
-    SharedPreferences rPref = RA.getPref();
-    int rM = RA.getM();
-    private Random random = new Random();
-    private Button[] buttons = new Button[9];
-    private TextView scoreTextView;
-    private Button mButton1;
-    private Button mButton2;
-    private Button mButton3;
-    private Button mButton4;
-    private Button mButton5;
-    private Button mButton6;
-    private Button mButton7;
-    private Button mButton8;
-    private Button mButton9;
+public class KamikadzeActivity extends AppCompatActivity {
+    TextView balanceNumber;
+    GridView gvMain;
+    TextView b1, b2, b3, b4, b5, b6, b7, b8, b9, gen;
+    int[] selectedNumbers = new int[3];
+    public int c;
+    int mm;
 
+    Random random = new Random();
+    SharedPreferences rPref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kamikadze);
-        scoreTextView = findViewById(R.id.score_textview);
-        money = findViewById(R.id.money);
 
+        b1 = findViewById(R.id._1);
+        b2 = findViewById(R.id._2);
+        b3 = findViewById(R.id._3);
+        b4 = findViewById(R.id._4);
+        b5 = findViewById(R.id._5);
+        b6 = findViewById(R.id._6);
+        b7 = findViewById(R.id._7);
+        b8 = findViewById(R.id._8);
+        b9 = findViewById(R.id._9);
+        gen = findViewById(R.id.generate);
+
+        balanceNumber = findViewById(R.id.Text_4);
+        // Получаем SharedPreferences, созданные в MainActivity
         rPref = getSharedPreferences("moneyData", MODE_PRIVATE);
-        rM = rPref.getInt(MainActivity.MONEY, 10000);
-        money.setText(String.valueOf(rM));
+        mm = rPref.getInt(MainActivity.MONEY, 10000);
 
-        mButton1 = findViewById(R.id.button_1);
-        mButton2 = findViewById(R.id.button_2);
-        mButton3 = findViewById(R.id.button_3);
-        mButton4 = findViewById(R.id.button_4);
-        mButton5 = findViewById(R.id.button_5);
-        mButton6 = findViewById(R.id.button_6);
-        mButton7 = findViewById(R.id.button_7);
-        mButton8 = findViewById(R.id.button_8);
-        mButton9 = findViewById(R.id.button_9);
-
-        buttons = new Button[] {mButton1, mButton2, mButton3, mButton4, mButton5, mButton6, mButton7, mButton8, mButton9};
-        // Установка обработчиков нажатия для всех кнопок
-        mButton1.setOnClickListener(this);
-        mButton2.setOnClickListener(this);
-        mButton3.setOnClickListener(this);
-        mButton4.setOnClickListener(this);
-        mButton5.setOnClickListener(this);
-        mButton6.setOnClickListener(this);
-        mButton7.setOnClickListener(this);
-        mButton8.setOnClickListener(this);
-        mButton9.setOnClickListener(this);
-
-        for (Button button : buttons) {
-            button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    // Обработка нажатия кнопки
-                    handleButtonClick((Button) view);
-                }
-            });
+        balanceNumber.setText(String.valueOf(mm));
+        toLock();
+        if(mm<=0){
+            gen.setClickable(false);
+            gen.setBackgroundResource(R.drawable.style_offnik);
+            toLock();
         }
-        // Генерация новых случайных правильных кнопок
     }
-    @Override
-    public void onClick(View view) {
-        int value = Integer.parseInt(((Button) view).getText().toString());
+    public void tob1 (View view){
+        checkNumber(1);
+        b1.setClickable(false);
+        b1.setBackgroundResource(R.drawable.style_offnik);
+        c++;
+    }
+    public void tob2 (View view){
+        checkNumber(2);
+        b2.setClickable(false);
+        b2.setBackgroundResource(R.drawable.style_offnik);
+        c++;
+    }
+    public void tob3 (View view){
+        checkNumber(3);
+        b3.setClickable(false);
+        b3.setBackgroundResource(R.drawable.style_offnik);
+        c++;
+    }
+    public void tob4 (View view){
+        checkNumber(4);
+        b4.setClickable(false);
+        b4.setBackgroundResource(R.drawable.style_offnik);
+        c++;
+    }
+    public void tob5 (View view){
+        checkNumber(5);
+        b5.setClickable(false);
+        b5.setBackgroundResource(R.drawable.style_offnik);
+        c++;
+    }
+    public void tob6 (View view){
+        checkNumber(6);
+        b6.setClickable(false);
+        b6.setBackgroundResource(R.drawable.style_offnik);
+        c++;
+    }
+    public void tob7 (View view){
+        checkNumber(7);
+        b7.setClickable(false);
+        b7.setBackgroundResource(R.drawable.style_offnik);
+        c++;
+    }
+    public void tob8 (View view){
+        checkNumber(8);
+        b8.setClickable(false);
+        b8.setBackgroundResource(R.drawable.style_offnik);
+        c++;
+    }
+    public void tob9 (View view){
+        checkNumber(9);
+        b9.setClickable(false);
+        b9.setBackgroundResource(R.drawable.style_offnik);
+        c++;
+    }
 
-        if (value == 5) {
-            rM += 10;
-        } else {
-            rM -= 5;
+    public void Vichislenia(View view){
+        toUnlock();
+
+        //Создаем массив чисел от 1 до 9
+        int[] randomNumbers = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        //Перемешиваем массив
+        for (int i = randomNumbers.length - 1; i > 0; i--) {
+            int index = random.nextInt(i + 1);
+            //Меняем местами элементы с индексами i и index
+            int temp = randomNumbers[i];
+            randomNumbers[i] = randomNumbers[index];
+            randomNumbers[index] = temp;
+            //Берем первые три числа
+            selectedNumbers = Arrays.copyOfRange(randomNumbers, 0, 3);
         }
-
-        // Генерация новых случайных правильных кнопок
     }
 
-    private void generateRandomCorrectButtons() {
-        int correctButtonIndex = random.nextInt(buttons.length);
-        String correctAnswer = String.valueOf(random.nextInt(10));
-        for (int i = 0; i < buttons.length; i++) {
-            Button button = buttons[i];
+    public void checkNumber ( int number){
+        if(c==3){
+            toLock();
+        }
+        //Проверка на привильность с использованием флагов
+        boolean foundMatch = false;
+        for (int i = 0; i < selectedNumbers.length; i++) {
+            if (selectedNumbers[i] == number) {
+                // Если число совпадает с выбранным пользователем числом, увеличиваем счетчик
+                mm += 1500;
+                balanceNumber.setText(String.valueOf(mm));
+                foundMatch = true; //Если правильно, останавливать цикл с помощью break
 
-            if (i == correctButtonIndex) {
-                button.setText(correctAnswer);
-                button.setTag("correct");
-            } else {
-                button.setText(String.valueOf(random.nextInt(10)));
-                button.setTag("incorrect");
+                break;
             }
         }
-    }
-    private void handleButtonClick(Button button) {
-        if (button.getTag().equals("correct")) {
-            rM += 10;
-            money.setText(String.valueOf(rM));
-        } else {
-            rM -= 2;
-            money.setText(String.valueOf(rM));
-        }
-        money.setText(String.valueOf(rM));
-        if (rM >= 50) {
-        } else if (rM <= -50) {
-            startActivity(new Intent(this, MainActivity.class));
-            Toast.makeText(this, "Лох", Toast.LENGTH_SHORT).show();
 
+        if (!foundMatch) {
+            mm -= 1000;
+        }
+        if(mm<=999){
+            toLock();
+            gen.setClickable(false);
+            gen.setBackgroundResource(R.drawable.style_offnik);
+            Toast.makeText(this,"А че с деньгами?", Toast.LENGTH_SHORT).show();
         }
 
-        generateRandomCorrectButtons();
+        balanceNumber.setText(String.valueOf(mm));
+        SharedPreferences.Editor editor = rPref.edit();
+        editor.putInt(MainActivity.MONEY, mm);
+        editor.apply();
     }
 
+    public void toLock(){
+        b1.setClickable(false);b1.setBackgroundResource(R.drawable.style_offnik);
+        b2.setClickable(false);b2.setBackgroundResource(R.drawable.style_offnik);
+        b3.setClickable(false);b3.setBackgroundResource(R.drawable.style_offnik);
+        b4.setClickable(false);b4.setBackgroundResource(R.drawable.style_offnik);
+        b5.setClickable(false);b5.setBackgroundResource(R.drawable.style_offnik);
+        b6.setClickable(false);b6.setBackgroundResource(R.drawable.style_offnik);
+        b7.setClickable(false);b7.setBackgroundResource(R.drawable.style_offnik);
+        b8.setClickable(false);b8.setBackgroundResource(R.drawable.style_offnik);
+        b9.setClickable(false);b9.setBackgroundResource(R.drawable.style_offnik);
+    }
+    public void toUnlock(){
+        c = 0;
+        b1.setClickable(true);b1.setBackgroundResource(R.drawable.style_cigan);
+        b2.setClickable(true);b2.setBackgroundResource(R.drawable.style_cigan);
+        b3.setClickable(true);b3.setBackgroundResource(R.drawable.style_cigan);
+        b4.setClickable(true);b4.setBackgroundResource(R.drawable.style_cigan);
+        b5.setClickable(true);b5.setBackgroundResource(R.drawable.style_cigan);
+        b6.setClickable(true);b6.setBackgroundResource(R.drawable.style_cigan);
+        b7.setClickable(true);b7.setBackgroundResource(R.drawable.style_cigan);
+        b8.setClickable(true);b8.setBackgroundResource(R.drawable.style_cigan);
+        b9.setClickable(true);b9.setBackgroundResource(R.drawable.style_cigan);
+    }
 }

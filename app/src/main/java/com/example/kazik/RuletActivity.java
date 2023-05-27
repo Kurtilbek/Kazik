@@ -54,7 +54,10 @@ public class RuletActivity extends AppCompatActivity {
 
         balanceNumber.setText(String.valueOf(mm));
 
-
+        if(mm<=0){
+            button.setClickable(false);
+            button.setBackgroundResource(R.drawable.style_offnik);
+        }
     }
 
     public void Vichislenia(View v) throws InterruptedException {
@@ -81,6 +84,7 @@ public class RuletActivity extends AppCompatActivity {
 
 
             if(mm<=99){
+                button.setBackgroundResource(R.drawable.style_offnik);
                 button.setClickable(false);
                 Toast.makeText(this,"А че с деньгами?", Toast.LENGTH_SHORT).show();
             }
@@ -95,19 +99,4 @@ public class RuletActivity extends AppCompatActivity {
         finish();
     }
 
-//    @Override
-//    protected void onDestroy() {
-//        super.onDestroy();
-//        // Сохраняем значение переменной m в SharedPreferences
-//        SharedPreferences.Editor editor = rPref.edit();
-//        editor.putInt(MainActivity.MONEY, mm);
-//        editor.apply();
-//    }
-//    public void onBackPressed() {
-//        // Возвращаем новое значение переменной m в MainActivity
-//        Intent intent = new Intent();
-//        intent.putExtra(MainActivity.MONEY, mm);
-//        setResult(RESULT_OK, intent);
-//        finish();
-//    }
 }

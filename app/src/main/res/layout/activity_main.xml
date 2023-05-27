@@ -7,17 +7,17 @@
     tools:context=".MainActivity"
     android:background="@color/backgroud">
 
-
-  <TextView
-      android:layout_width="200dp"
-      android:layout_height="50dp"
-      android:layout_below="@+id/adfhb"
+  <ImageView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentTop="true"
       android:layout_alignParentEnd="true"
-      android:layout_marginTop="-89dp"
-      android:layout_marginEnd="5dp"
-      android:text="НЕ ГОТОВО"
-      android:textSize="30dp"
-      android:textColor="@color/text_color"/>
+      android:layout_marginTop="100dp"
+      android:layout_marginEnd="60dp"
+      android:onClick="goToKamikadze"
+      android:scaleType="fitXY"
+      android:src="@mipmap/ic_kamikadze_foreground"
+      tools:ignore="SpeakableTextPresentCheck" />
 
   <TextView
       android:layout_width="151dp"
@@ -49,20 +49,6 @@
       android:background="@drawable/style_cigan"
       android:gravity="center"
       android:textColor="#5A5A5A"/>
-
-  <Button
-      android:id="@+id/adfhb"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_alignParentStart="true"
-      android:layout_alignParentTop="true"
-      android:layout_alignParentEnd="true"
-      android:layout_marginStart="207dp"
-      android:layout_marginLeft="100dp"
-      android:layout_marginTop="350dp"
-      android:layout_marginEnd="10dp"
-      android:onClick="goToKamikadze"
-      android:text="Перейти к рулетке" />
 
   <TextView
       android:id="@+id/Text_4"
@@ -100,8 +86,7 @@
       android:onClick="goToRulet"
       android:scaleType="fitXY"
       android:src="@mipmap/ic_torulet_foreground"
-      app:layout_constraintLeft_toLeftOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
+
       tools:ignore="SpeakableTextPresentCheck" />
 
 
