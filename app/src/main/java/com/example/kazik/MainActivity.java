@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         balanceNumber.setText(String.valueOf(m));
 
         // Обновляем значение переменной m и отображаем его на экране
-        balanceNumber.setText(String.valueOf(m));
+//        balanceNumber.setText(String.valueOf(m));
     }
 
     public void goToRulet(View view){

@@ -86,7 +86,6 @@
       android:onClick="goToRulet"
       android:scaleType="fitXY"
       android:src="@mipmap/ic_torulet_foreground"
-
       tools:ignore="SpeakableTextPresentCheck" />
 
 

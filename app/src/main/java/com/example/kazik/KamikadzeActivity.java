@@ -50,6 +50,12 @@ public class KamikadzeActivity extends AppCompatActivity {
             gen.setBackgroundResource(R.drawable.style_offnik);
             toLock();
         }
+        if(mm<=999){
+            gen.setClickable(false);
+            toLock();
+            gen.setBackgroundResource(R.drawable.style_offnik);
+            Toast.makeText(this,getString(R.string.WhatMoney), Toast.LENGTH_SHORT).show();
+        }
     }
     public void tob1 (View view){
         checkNumber(1);
@@ -142,12 +148,7 @@ public class KamikadzeActivity extends AppCompatActivity {
         if (!foundMatch) {
             mm -= 1000;
         }
-        if(mm<=999){
-            toLock();
-            gen.setClickable(false);
-            gen.setBackgroundResource(R.drawable.style_offnik);
-            Toast.makeText(this,getString(R.string.WhatMoney), Toast.LENGTH_SHORT).show();
-        }
+
 
         balanceNumber.setText(String.valueOf(mm));
         SharedPreferences.Editor editor = rPref.edit();
